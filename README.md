@@ -1,2 +1,2 @@
 # fractal-tree
-Fun little bash script that creates as fractal tree in ASCII.
+Fun little bash script that creates a fractal tree in ASCII.
