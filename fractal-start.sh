@@ -12,7 +12,6 @@ function contains() {
 
   return 1
 }
-
 function drawLine() {
   for (( column=1; column<=${NUM_COLUMNS}; column++ ));do
     if contains $column "$*";then 
@@ -25,9 +24,6 @@ function drawLine() {
   NUM_ROWS=$(( NUM_ROWS - 1 ))
   printf "\n"
 }
-
-
-#intial variables
 function drawTree() {
   SIZE=$1
   BRANCH_POINTS=$2
@@ -43,9 +39,7 @@ function drawTree() {
     # TODO: Remove eval by using awk instead of sed.
     eval drawLine ${ARGUMENT_LEFT} ${ARGUMENT_RIGHT}
   done
-
   NEW_BRANCH_POINTS=""
-
   for point in ${BRANCH_POINTS};do
     NEW_BRANCH_POINTS+=" $((point + SIZE)) $((point - SIZE))" 
   done
@@ -58,7 +52,6 @@ function drawTree() {
   fi
 
   SIZE=$((SIZE/2))
-
   drawTree ${SIZE} "${NEW_BRANCH_POINTS}" 
 }
 
